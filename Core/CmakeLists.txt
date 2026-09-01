@@ -1,0 +1,23 @@
+add_library(Core
+    Source/Application.cpp
+    Source/Window.cpp
+)
+
+target_sources(Core PRIVATE
+    Source/AppErrorType.h
+    Source/Application.h
+    Source/ImguiWindow.h
+    Source/Window.h
+)
+
+target_include_directories(Core
+    PUBLIC 
+        ${CMAKE_CURRENT_SOURCE_DIR}/Source
+)
+
+# Link against the imgui target created in the root CMakeLists.txt
+target_link_libraries(Core
+    PUBLIC
+        imgui
+        SDL3::SDL3
+)

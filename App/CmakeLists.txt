@@ -1,0 +1,19 @@
+add_executable(App
+    Source/main.cpp
+    Source/ImguiWindows/ChipViewer.cpp
+    Source/ImguiWindows/DisasmWindow.cpp
+    Source/ImguiWindows/MemViewerWindow.cpp
+    Source/ImguiWindows/TerminalWindow.cpp
+    Source/ImguiWindows/VideoWindow.cpp
+)
+
+target_include_directories(App
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/Source
+)
+
+# Link Core (automatically inherits ImGui and SDL headers/libraries)
+target_link_libraries(App
+    PRIVATE
+        Core
+)
