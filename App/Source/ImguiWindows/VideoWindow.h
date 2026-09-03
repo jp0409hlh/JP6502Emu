@@ -1,5 +1,6 @@
 #pragma once
 
+#include "SDL3/SDL.h"
 #include "ImguiWindow.h"
 
 namespace UI{
@@ -10,6 +11,7 @@ public:
     ~VideoWindow();
     void renderImguiWindow() override;
 private:
+    SDL_Texture* TMS9918_texture;
 };
 
 }
