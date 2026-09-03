@@ -1,4 +1,4 @@
-add_executable(App
+add_executable(JP6502Emu
     Source/main.cpp
     Source/ImguiWindows/ChipViewer.cpp
     Source/ImguiWindows/DisasmWindow.cpp
@@ -7,13 +7,13 @@ add_executable(App
     Source/ImguiWindows/VideoWindow.cpp
 )
 
-target_include_directories(App
+target_include_directories(JP6502Emu
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/Source
 )
 
 # Link Core (automatically inherits ImGui and SDL headers/libraries)
-target_link_libraries(App
+target_link_libraries(JP6502Emu
     PRIVATE
         Core
 )

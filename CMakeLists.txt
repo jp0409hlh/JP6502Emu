@@ -36,6 +36,7 @@ target_include_directories(imgui
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/external/imgui
         ${CMAKE_CURRENT_SOURCE_DIR}/external/imgui/backends
+        ${CMAKE_CURRENT_SOURCE_DIR}/external/imgui_club/imgui_memory_editor
 )
 
 # Link ImGui against SDL target (Use SDL2::SDL2 if using SDL2)

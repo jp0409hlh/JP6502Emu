@@ -5,11 +5,11 @@ set -e
 function buildWindows(){
     if [[ $build_type == "Release" ]] ; then 
         echo "========= Building Windows Binary (Release) ========="
-       
+        cmake --build ${build_dir}/Windows-Release
 
-    elif [[ $build_type == "Debug" ]] || [[ -z ${build_type} ]]; then
+    elif [[ $build_type == "Debug" ]]; then
         echo "========= Building Windows Binary (Debug) ========="
-        
+        cmake --build ${build_dir}/Windows-Debug 
 
     else 
         echo "Argument error : Build type specification error"
@@ -20,9 +20,11 @@ function buildWindows(){
 function buildLinux(){
     if [[ $build_type == "Release" ]] ; then 
         echo "========= Building Linux Binary (Release) ========="
+        cmake --build ${build_dir}/Linux-Release
         
-    elif [[ $build_type == "Debug" ]] || [[ -z ${build_type} ]]; then
+    elif [[ $build_type == "Debug" ]]; then
         echo "========= Building Linux Binary (Debug) ========="
+        cmake --build ${build_dir}/Linux-Debug
         
     else 
         echo "Argument error : Build type specification error"
@@ -31,7 +33,7 @@ function buildLinux(){
 }
 
 target_OS="$1"
-build_type="$2"
+build_type="${2:-"Debug"}"
 build_dir="../build"
 
 if [[ $target_OS == "All" ]] ; then

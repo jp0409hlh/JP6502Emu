@@ -7,7 +7,7 @@
 
 
 int main(int argc, char** argv){
-    std::string app_name = "JP6502 Emu";
+    std::string app_name = "JP6502Emu";
     Core::Application app(app_name);
     if(!app.Init()){
         return 0;

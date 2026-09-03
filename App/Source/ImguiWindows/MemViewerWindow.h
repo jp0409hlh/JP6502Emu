@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ImguiWindow.h"
+#include "imgui_memory_editor.h"
 
 namespace UI{
 

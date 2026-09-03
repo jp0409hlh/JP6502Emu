@@ -8,14 +8,16 @@ function GenerateWindows(){
         mkdir ${build_dir}/Windows-Release
     fi 
 
-    cmake -S .. -B ${build_dir}/Windows-Release
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=win64_tc.cmake -S .. -B ${build_dir}/Windows-Release
+
+    wait 
 
     echo "========= Setting up Windows Debug Build Directory ========="
     if [[ ! -d ${build_dir}/Windows-Debug ]]; then
         mkdir ${build_dir}/Windows-Debug
     fi
 
-    cmake -S .. -B ${build_dir}/Windows-Debug
+    cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=win64_tc.cmake -S .. -B ${build_dir}/Windows-Debug
 }
 
 function GenerateLinux(){
@@ -24,14 +26,16 @@ function GenerateLinux(){
         mkdir ${build_dir}/Linux-Release
     fi
 
-    cmake -S .. -B ${build_dir}/Linux-Release
+    cmake -DCMAKE_BUILD_TYPE=Release -S .. -B ${build_dir}/Linux-Release
+
+    wait 
 
     echo "========= Setting up Linux Debug Build Directory ========="
     if [[ ! -d ${build_dir}/Linux-Debug ]]; then
         mkdir ${build_dir}/Linux-Debug
     fi
 
-    cmake -S .. -B ${build_dir}/Linux-Debug
+    cmake -DCMAKE_BUILD_TYPE=Debug -S .. -B ${build_dir}/Linux-Debug
 }
 
 target_OS="$1"
