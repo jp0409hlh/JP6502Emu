@@ -13,7 +13,7 @@ MemViewerWindow::~MemViewerWindow(){
 
 void MemViewerWindow::renderImguiWindow(){
     ImGui::Begin(this->ImguiWindowName.c_str());
-
+    this->mem_edit.DrawContents(&(this->test_memory), 1<<15);
     ImGui::End();
 }
 

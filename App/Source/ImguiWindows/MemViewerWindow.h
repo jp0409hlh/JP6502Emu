@@ -1,5 +1,6 @@
 #pragma once
 
+#include "imgui.h"
 #include "ImguiWindow.h"
 #include "imgui_memory_editor.h"
 
@@ -11,6 +12,9 @@ public:
     ~MemViewerWindow();
     void renderImguiWindow() override;
 private:
+    MemoryEditor mem_edit;
+
+    char test_memory[1<<15];
 };
 
 
