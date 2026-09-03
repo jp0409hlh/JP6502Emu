@@ -5,6 +5,7 @@ add_executable(JP6502Emu
     Source/ImguiWindows/MemViewerWindow.cpp
     Source/ImguiWindows/TerminalWindow.cpp
     Source/ImguiWindows/VideoWindow.cpp
+    Source/ImguiWindows/MenuBar.cpp
 )
 
 target_include_directories(JP6502Emu

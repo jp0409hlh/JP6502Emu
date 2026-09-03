@@ -9,9 +9,13 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Static linking flags
+
+# TODO : Configure such that SDL and imgui is statically linked only in Release mode
 if(MINGW)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -static-libstdc++ -static")
 endif()
+
+
 
 # ------------------------------------------------------------------------------
 # Third-Party Dependencies (external/)
@@ -50,3 +54,5 @@ target_link_libraries(imgui
 # ------------------------------------------------------------------------------
 add_subdirectory(Core)
 add_subdirectory(App)
+
+target_compile_definitions(JP6502Emu PRIVATE "$<$<CONFIG:Debug>:DEBUG>")
