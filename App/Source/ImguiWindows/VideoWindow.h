@@ -10,8 +10,9 @@ public:
     VideoWindow(bool, std::string);
     ~VideoWindow();
     void renderImguiWindow() override;
+    void createSDLTexture(SDL_Renderer* sdl_renderer);
 private:
-    SDL_Texture* TMS9918_texture;
+    SDL_Texture* TMS9918_texture = nullptr;
 };
 
 }

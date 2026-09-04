@@ -137,4 +137,8 @@ SDL_WindowID Window::getSDLWindowID(){
     return SDL_GetWindowID(this->window);
 }
 
+SDL_Renderer* Window::getSDLRenderer() const {
+    return this->renderer;
+}
+
 }

@@ -61,4 +61,8 @@ void Application::Stop(){
     running = false;
 }
 
+SDL_Renderer* Application::appGetSDLRenderer() const{
+    return this->app_window.getSDLRenderer();
+}
+
 }

@@ -56,3 +56,4 @@ add_subdirectory(Core)
 add_subdirectory(App)
 
 target_compile_definitions(JP6502Emu PRIVATE "$<$<CONFIG:Debug>:DEBUG>")
+# REMEBER : vr9918Emu default links with DLL, set macro VR_EMU_TMS9918_STATIC to fix

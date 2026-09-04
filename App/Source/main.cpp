@@ -26,6 +26,7 @@ int main(int argc, char** argv){
     UI::MemViewerWindow mem_view(true, "Memory viewer");
     UI::TerminalWindow term_view(true, "Terminal");
     UI::VideoWindow vid_view(true, "Video output");
+    vid_view.createSDLTexture(app.appGetSDLRenderer());
 
 #ifdef DEBUG
     printf("Start pushing windows");

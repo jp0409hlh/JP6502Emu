@@ -24,6 +24,7 @@ public:
     void pushImguiWindow(ImguiWindow* imgui_window);
     void render();
     SDL_WindowID getSDLWindowID();
+    SDL_Renderer* getSDLRenderer() const ;
 private:
     float main_scale;
     SDL_WindowFlags window_flags;

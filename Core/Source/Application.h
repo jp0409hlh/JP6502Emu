@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 
+#include "SDL3/SDL.h"
 #include "AppErrorType.h"
 #include "Window.h"
 #include "ImguiWindow.h"
@@ -17,6 +18,7 @@ public:
     void AddImguiWindow(ImguiWindow* imgui_window);
     void Run();
     void Stop();
+    SDL_Renderer* appGetSDLRenderer() const;
 private:
     std::string app_name = "Application";
     Window app_window;
