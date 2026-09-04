@@ -27,7 +27,7 @@ void VideoWindow::createSDLTexture(SDL_Renderer* sdl_renderer){
 void VideoWindow::renderImguiWindow(Core::Application& app){
     ImGui::Begin(this->ImguiWindowName.c_str());
     ImTextureID texture_id = (ImTextureID)(intptr_t)(this->TMS9918_texture);
-    ImVec2 size = ImVec2((float)(TMS9918_PIXELS_X)*3.2f, (float)(TMS9918_PIXELS_Y)*3.2f);
+    ImVec2 size = ImVec2((float)(TMS9918_PIXELS_X), (float)(TMS9918_PIXELS_Y));
 
     SDL_SetRenderTarget(app.appGetSDLRenderer(), this->TMS9918_texture);
     SDL_SetRenderDrawColor(app.appGetSDLRenderer(), 255, 0, 0, 255);
