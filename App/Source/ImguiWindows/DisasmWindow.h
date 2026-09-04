@@ -8,7 +8,7 @@ class DisasmWindow : public Core::ImguiWindow{
 public:
     DisasmWindow(bool, std::string);
     ~DisasmWindow();
-    void renderImguiWindow() override;
+    void renderImguiWindow(Core::Application& app) override;
 private:
 };
 

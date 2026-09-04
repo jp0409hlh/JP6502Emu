@@ -11,7 +11,7 @@ TerminalWindow::~TerminalWindow(){
 
 }
 
-void TerminalWindow::renderImguiWindow(){
+void TerminalWindow::renderImguiWindow(Core::Application& app){
     ImGui::Begin(this->ImguiWindowName.c_str());
 
     ImGui::End();

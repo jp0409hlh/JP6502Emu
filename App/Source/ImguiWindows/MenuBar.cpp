@@ -19,7 +19,7 @@ MenuBar::~MenuBar(){
 #endif
 }
 
-void MenuBar::renderImguiWindow(){
+void MenuBar::renderImguiWindow(Core::Application& app){
     if(ImGui::BeginMainMenuBar()){
         if(ImGui::BeginMenu("File")){
             showFileMenu();

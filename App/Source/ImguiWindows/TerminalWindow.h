@@ -8,7 +8,7 @@ class TerminalWindow : public Core::ImguiWindow{
 public:
     TerminalWindow(bool, std::string);
     ~TerminalWindow();
-    void renderImguiWindow() override;
+    void renderImguiWindow(Core::Application& app) override;
 private:
 
 };

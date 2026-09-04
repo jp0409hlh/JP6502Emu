@@ -12,7 +12,7 @@ DisasmWindow::~DisasmWindow(){
 
 }
 
-void DisasmWindow::renderImguiWindow(){
+void DisasmWindow::renderImguiWindow(Core::Application& app){
     ImGui::Begin(this->ImguiWindowName.c_str());
 
     ImGui::End();

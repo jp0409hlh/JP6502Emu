@@ -10,6 +10,8 @@
 
 namespace Core{
 
+class Window;
+
 class Application{
 public:
     Application(std::string _app_name);
@@ -21,7 +23,7 @@ public:
     SDL_Renderer* appGetSDLRenderer() const;
 private:
     std::string app_name = "Application";
-    Window app_window;
+    Window* app_window;
     bool running;
 };
 

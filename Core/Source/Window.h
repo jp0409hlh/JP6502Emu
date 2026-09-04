@@ -3,12 +3,16 @@
 #include <string>
 #include <vector>
 
+#include "Application.h"
 #include "AppErrorType.h"
 #include "ImguiWindow.h"
 #include "SDL3/SDL.h"
 #include "imgui.h"
 
 namespace Core{
+
+class Application; // Forward delcaration
+class ImguiWindow;
 
 class Window{
 public:
@@ -22,7 +26,7 @@ public:
     void setupImgui();
     void setupRendererBackends();
     void pushImguiWindow(ImguiWindow* imgui_window);
-    void render();
+    void render(Application& app);
     SDL_WindowID getSDLWindowID();
     SDL_Renderer* getSDLRenderer() const ;
 private:

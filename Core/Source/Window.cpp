@@ -112,7 +112,7 @@ void Window::pushImguiWindow(ImguiWindow* window){
     this->imgui_win_vec.push_back(window);
 }
 
-void Window::render(){
+void Window::render(Application& app){
     // Start the Dear ImGui frame
     ImGui_ImplSDLRenderer3_NewFrame();
     ImGui_ImplSDL3_NewFrame();
@@ -121,7 +121,7 @@ void Window::render(){
     ImGui::DockSpaceOverViewport();
 
     for(auto& imgui_window : imgui_win_vec){
-        imgui_window->renderImguiWindow();
+        imgui_window->renderImguiWindow(app);
     }
 
     ImGui::Render();

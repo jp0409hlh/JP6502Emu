@@ -11,7 +11,7 @@ MemViewerWindow::~MemViewerWindow(){
 
 }
 
-void MemViewerWindow::renderImguiWindow(){
+void MemViewerWindow::renderImguiWindow(Core::Application& app){
     ImGui::Begin(this->ImguiWindowName.c_str());
     this->mem_edit.DrawContents(&(this->test_memory), 1<<15);
     ImGui::End();

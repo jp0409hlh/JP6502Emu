@@ -7,14 +7,15 @@ namespace Core{
 
 Application::Application(std::string _app_name){
     this->app_name = _app_name;
+    this->app_window = new Window;
 }
 
 Application::~Application(){
-
+    delete app_window;
 }
 
 bool Application::Init(){
-    AppErrorType error = app_window.create(this->app_name);
+    AppErrorType error = app_window->create(this->app_name);
     if(error == AppErrorType::NO_ERR){
         this->running = true;
         return true;
@@ -25,7 +26,7 @@ bool Application::Init(){
 }
 
 void Application::AddImguiWindow(ImguiWindow* imgui_window){
-    this->app_window.pushImguiWindow(imgui_window);
+    this->app_window->pushImguiWindow(imgui_window);
 }
 
 void Application::Run(){
@@ -41,7 +42,7 @@ void Application::Run(){
                 running = false;
             }
             if (event.type == SDL_EVENT_WINDOW_CLOSE_REQUESTED
-                 && event.window.windowID == this->app_window.getSDLWindowID()){
+                 && event.window.windowID == this->app_window->getSDLWindowID()){
 #ifdef DEBUG
                 printf("SDL_CLOSE_WINDOW_REQUEST\n");
 #endif
@@ -49,7 +50,7 @@ void Application::Run(){
             }
         }
 
-        this->app_window.render();
+        this->app_window->render(*(this));
     }
 
 #ifdef DEBUG
@@ -62,7 +63,7 @@ void Application::Stop(){
 }
 
 SDL_Renderer* Application::appGetSDLRenderer() const{
-    return this->app_window.getSDLRenderer();
+    return this->app_window->getSDLRenderer();
 }
 
 }

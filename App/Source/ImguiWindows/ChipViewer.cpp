@@ -11,7 +11,7 @@ namespace UI{
     Chip6502Viewer::~Chip6502Viewer(){
 
     }
-    void Chip6502Viewer::renderImguiWindow(){
+    void Chip6502Viewer::renderImguiWindow(Core::Application& app){
         if(this->show){
         ImGui::Begin(this->ImguiWindowName.c_str());
 
@@ -28,7 +28,7 @@ namespace UI{
     Chip6522Viewer::~Chip6522Viewer(){
 
     }
-    void Chip6522Viewer::renderImguiWindow(){
+    void Chip6522Viewer::renderImguiWindow(Core::Application& app){
         if(this->show){
         ImGui::Begin(this->ImguiWindowName.c_str());
         
@@ -45,7 +45,7 @@ namespace UI{
     Chip6551Viewer::~Chip6551Viewer(){
 
     }
-    void Chip6551Viewer::renderImguiWindow(){
+    void Chip6551Viewer::renderImguiWindow(Core::Application& app){
         if(this->show){
         ImGui::Begin(this->ImguiWindowName.c_str());
         
@@ -62,7 +62,7 @@ namespace UI{
     ChipTMS9918Viewer::~ChipTMS9918Viewer(){
 
     }
-    void ChipTMS9918Viewer::renderImguiWindow(){
+    void ChipTMS9918Viewer::renderImguiWindow(Core::Application& app){
         if(this->show){
         ImGui::Begin(this->ImguiWindowName.c_str());
         

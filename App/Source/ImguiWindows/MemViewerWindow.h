@@ -10,7 +10,7 @@ class MemViewerWindow : public Core::ImguiWindow{
 public:
     MemViewerWindow(bool, std::string);
     ~MemViewerWindow();
-    void renderImguiWindow() override;
+    void renderImguiWindow(Core::Application& app) override;
 private:
     MemoryEditor mem_edit;
 
